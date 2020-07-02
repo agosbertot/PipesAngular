@@ -92,6 +92,49 @@
                     <td>async</td>
                     <td>{{ valorPromesa | async}}</td>
                 </tr>
+                <tr>
+                    <td> {{fecha}}</td>
+                    <td>date</td>
+                    <td>{{fecha | date}}</td>
+                </tr>
+                <tr>
+                    <td> {{fecha}}</td>
+                    <td>date:'medium'</td>
+                    <td>{{fecha | date:'medium'}}</td>
+                </tr>
+                <tr>
+                    <td> {{fecha}}</td>
+                    <td>date:'short'</td>
+                    <td>{{fecha | date:'short'}}</td>
+                </tr>
+                <tr>
+                    <td> {{fecha}}</td>
+                    <td>date:'MMMM - dd'</td>
+                    <td>{{fecha | date:'MMMM - dd'}}</td>
+                </tr>
+                <tr>
+                    <td> {{fecha}}</td>
+                    <td>date:'MMMM - dd':'':'en'</td>
+                    <!-- el idioma por defecto lo configure en espalniol, si quiero que solo esta fecha salga en ingles: -->
+                    <td>{{fecha | date:'MMMM - dd':'':'en'}}</td>
+                </tr>
+                <!-- Pipe PERSONALIZADO: se genera primero en el cmd con el comando> ng g pipe pipes/capitalizado (ruta (carpeta pipes) y el nombre) -->
+                <tr>
+                    <td> {{nombre2}}</td>
+                    <td>capitalizado</td>
+                    <!-- capitalizado:true cpitaliza todas las palabras, capitalizado:false capitaliza solo la primera palabra, pero no es necesario ponerle false o true porq en la funcion del pipe ya le puse por defecto que todas -->
+                    <td>{{nombre2 | capitalizado:true}}</td>
+                </tr>
+                <tr>
+                    <td> {{nombre}}</td>
+                    <td>contrasena:{{activar}}
+                        <br>
+                        <button (click)="activar = !activar" class="btn btn-outline-primary">
+                            Activar/Desactivar
+                        </button>
+                    </td>
+                    <td>{{nombre | contrasena:activar}}</td>
+                </tr>
             </tbody>
         </table>
 
@@ -116,6 +159,14 @@
                 <hr>
                 <pre>{{heroe | json}}</pre>
                 <!-- la etqueta PRE es de boostrap para que se vea mejor la impresion del objeto -->
+            </div>
+        </div>
+        <br>
+        <h3 class="mt-3">Pipe Personalizado: Domseguro</h3>
+        <hr>
+        <div class="row">
+            <div class="col mb-5">
+                <iframe width="560" height="315" [src]="videoUrl | domseguro" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </div>

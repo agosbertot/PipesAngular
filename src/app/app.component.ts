@@ -28,5 +28,12 @@ resolve('llego la data');
     }, 4500);
   });
 
+  fecha: Date = new Date();
+
+  nombre2 = 'agosTiNa BerToT';
+
+  videoUrl = 'https://www.youtube.com/embed/viR_GHhwbP0';
+
+  activar:boolean = true;
 
 }
